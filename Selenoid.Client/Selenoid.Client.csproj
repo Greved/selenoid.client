@@ -1,8 +1,33 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
 	<TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<Version>0.1.0</Version>
+	<Authors>greved</Authors>
+	<Company>greved</Company>
+	<Description>Third party implementation of Selenoid's API written in C# and .Net Core</Description>
+	<Copyright>MIT</Copyright>
+	<RepositoryUrl>https://github.com/Greved/selenoid.client</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageTags>selenoid, selenium</PackageTags>
+	<PackageReleaseNotes>Initial release</PackageReleaseNotes>
+	<PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
 
 </Project>
