@@ -25,7 +25,7 @@ namespace Selenoid.Client
 
         public async Task<List<SelenoidListItem>> GetAsync()
         {
-            var stringResponse = await httpClient.GetStringAsync($"{settings.SelenoidHostUrl}/video/");
+            var stringResponse = await httpClient.GetStringAsync($"{settings.SelenoidHostUrl}/video/").ConfigureAwait(false);
             var items = listItemsConverter.Convert(stringResponse);
             return items;
         }
