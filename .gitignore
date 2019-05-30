@@ -1,0 +1,9 @@
+bin
+obj
+*.suo
+*.ide
+.vs
+/.idea/
+.idea
+packages
+*DotSettings.user
